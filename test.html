@@ -3,67 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>oelyx guesser</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Random Image</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        img {
+            max-width: 80%;
+            max-height: 80%;
+            margin: 20px auto;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <div class="banner">
-      <a href="./index.html"><img src="img/oelyx.png"><img src="img/guesser.png" width="300px"></a>
-      <a href="./guesser.html"><button class="przycisk">Przeglądaj gruzy</button></a>
-      <a href="./kontakt.html"><button class="przycisk">Info</button></a>
+    <h1>Random Image Viewer</h1>
+    <div id="imageContainer">
+        <img id="randomImage" src="" alt="Random Image">
     </div>
-    <div class="main">
-      <h1>wybierz tryb:</h1>
-      <button class="przycisk2">normalny</button>
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-
-            <div class="swiper-slide" id="imageContainer">
-                <img id="randomImage" src="" alt="Image">
-            </div>
-
-            <div class="swiper-slide" id="imageContainer2">
-                <img id="randomImage2" src="./img/temp.png" alt="Image">
-            </div>
-
-            <div class="swiper-slide" id="imageContainer3">
-                <img id="randomImage3" src="./img/temp.png" alt="Image">
-            </div>
-            
-            <div class="swiper-slide" id="imageContainer4">
-                <img id="randomImage4" src="./img/temp.png" alt="Image">
-            </div>
-            
-            <div class="swiper-slide" id="imageContainer5">
-                <img id="randomImage5" src="./img/temp.png" alt="Image">
-            </div>
-            
-            <div class="swiper-slide" id="imageContainer6">
-                <img id="randomImage6" src="./img/temp.png" alt="Image">
-            </div>
-            
-            <div class="swiper-slide" id="imageContainer7">
-                <img id="randomImage7" src="./img/temp.png" alt="Image">
-            </div>
-            
-            <div class="swiper-slide" id="imageContainer8">
-                <img id="randomImage8" src="./img/temp.png" alt="Image">
-            </div>
-            
-            <div class="swiper-slide" id="imageContainer9">
-                <img id="randomImage9" src="./img/temp.png" alt="Image">
-            </div>
-
-        </div>
-        <!-- If you need pagination -->
-        <div class="swiper-pagination"></div>
-        
+    <div id="imageContainer2">
+        <img id="randomImage2" src="" alt="Random Image">
     </div>
-    
+    <div id="imageContainer3">
+        <img id="randomImage3" src="" alt="Random Image">
+    </div>
+    <div id="imageContainer4">
+        <img id="randomImage4" src="" alt="Random Image">
+    </div>
+    <div id="imageContainer5">
+        <img id="randomImage5" src="" alt="Random Image">
+    </div>
+    <div id="imageContainer6">
+        <img id="randomImage6" src="" alt="Random Image">
+    </div>
+    <div id="imageContainer7">
+        <img id="randomImage7" src="" alt="Random Image">
+    </div>
+    <div id="imageContainer8">
+        <img id="randomImage8" src="" alt="Random Image">
+    </div>
+    <div id="imageContainer9">
+        <img id="randomImage9" src="" alt="Random Image">
+    </div>
+
     <script>
         // Function to get a random integer between min and max (inclusive)
         function getRandomInt(min, max) {
@@ -144,20 +128,11 @@
             }
 
             // Set a timeout to load another random image after 5 seconds (5000 milliseconds)
-            //setTimeout(loadRandomImage, 5000); Adjust the interval as needed
+            setTimeout(loadRandomImage, 5000); // Adjust the interval as needed
         }
 
         // Call the loadRandomImage function to start displaying random images
         loadRandomImage();
     </script>
-
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
-    </div>
-    <div class="stopka">
-      <hr>
-      Project by: dynamo & roger | wersja 1.1
-    </div>
-    
 </body>
 </html>

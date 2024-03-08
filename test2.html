@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Folder Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #imageContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .image {
+            margin: 10px;
+            max-width: 300px;
+            max-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wyświetlanie zdjęć z losowego folderu</h1>
+    <div id="imageContainer"></div>
+
+    <script>
+        function loadImagesFromFolder(folderPath) {
+            fetch(`images/${folderPath}`)
+            .then(response => response.json())
+            .then(images => displayImages(images))
+            .catch(error => console.error('Błąd pobierania danych:', error));
+        }
+        // Lista folderów z obrazami
+        const folders = ['auto1', 'auto2', 'auto3', 'auto4', 'auto5'];
+
+        // Wybierz losowy folder z listy
+        const randomFolder = folders[Math.floor(Math.random() * folders.length)];
+
+        // Funkcja pobierająca obrazy z wybranego folderu
+        function loadImagesFromFolder(folderPath) {
+            // Utwórz zapytanie HTTP
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        const images = JSON.parse(xhr.responseText);
+                        displayImages(images);
+                    } else {
+                        console.error('Wystąpił błąd podczas pobierania danych:', xhr.status, xhr.statusText);
+                    }
+                }
+            };
+
+            // Wyślij zapytanie HTTP GET do serwera, aby pobrać obrazy z folderu
+            xhr.open('GET', `get-images.php?folder=${folderPath}`, true);
+            xhr.send();
+        }
+
+        // Funkcja wyświetlająca obrazy w kontenerze
+        function displayImages(images) {
+            const imageContainer = document.getElementById('imageContainer');
+            images.forEach(image => {
+                const imgElement = document.createElement('img');
+                imgElement.src = image;
+                imgElement.alt = 'Image';
+                imgElement.classList.add('image');
+                imageContainer.appendChild(imgElement);
+            });
+        }
+
+        // Wywołaj funkcję pobierającą obrazy z losowego folderu
+        loadImagesFromFolder(randomFolder);
+    </script>
+</body>
+</html>
