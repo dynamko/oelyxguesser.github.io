@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>oelyx guesser</title>
+    <link rel="icon" type="image/x-icon" href="./img/ikona_128.ico">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,6 +20,193 @@
     <div class="main">
       <h1>wybierz tryb:</h1>
       <button class="przycisk2">normalny</button>
+      <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="numbertext" id="imageContainer">1 / 9</div>
+          <img src="./img/temp.png" style="width:100%" id="randomImage">
+          <div class="text">Caption Text</div>
+        </div>
+        
+        <div class="mySlides fade">
+            <div class="numbertext" id="imageContainer2">2 / 9</div>
+            <img src="./img/temp.png" style="width:100%" id="randomImage2">
+            <div class="text">Caption Text</div>
+          </div>
+        
+          <div class="mySlides fade">
+            <div class="numbertext" id="imageContainer3">3 / 9</div>
+            <img src="./img/temp.png" style="width:100%" id="randomImage3">
+            <div class="text">Caption Text</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext" id="imageContainer4">4 / 9</div>
+            <img src="./img/temp.png" style="width:100%" id="randomImage4">
+            <div class="text">Caption Text</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext" id="imageContainer5">5 / 9</div>
+            <img src="./img/temp.png" style="width:100%" id="randomImage5">
+            <div class="text">Caption Text</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext" id="imageContainer6">6 / 9</div>
+            <img src="./img/temp.png" style="width:100%" id="randomImage6">
+            <div class="text">Caption Text</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext" id="imageContainer7">7 / 9</div>
+            <img src="./img/temp.png" style="width:100%" id="randomImage7">
+            <div class="text">Caption Text</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext" id="imageContainer8">8 / 9</div>
+            <img src="./img/temp.png" style="width:100%" id="randomImage8">
+            <div class="text">Caption Text</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext" id="imageContainer9">9 / 9</div>
+            <img src="./img/temp.png" style="width:100%" id="randomImage9">
+            <div class="text">Caption Text</div>
+          </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span> 
+          <span class="dot" onclick="currentSlide(5)"></span> 
+          <span class="dot" onclick="currentSlide(6)"></span> 
+          <span class="dot" onclick="currentSlide(7)"></span> 
+          <span class="dot" onclick="currentSlide(8)"></span> 
+          <span class="dot" onclick="currentSlide(9)"></span>  
+        </div>
+        
+        <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+               // Function to get a random integer between min and max (inclusive)
+               function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Function to load a random image
+        function loadRandomImage() {
+            var imageContainer = [];
+            var randomImage = [];
+
+            imageContainer.push(document.getElementById('imageContainer'));
+            randomImage.push(document.getElementById('randomImage'));
+
+            imageContainer.push(document.getElementById('imageContainer2'));
+            randomImage.push(document.getElementById('randomImage2'));
+
+            imageContainer.push(document.getElementById('imageContainer3'));
+            randomImage.push(document.getElementById('randomImage3'));
+
+            imageContainer.push(document.getElementById('imageContainer4'));
+            randomImage.push(document.getElementById('randomImage4'));
+            
+            imageContainer.push(document.getElementById('imageContainer5'));
+            randomImage.push(document.getElementById('randomImage5'));
+
+            imageContainer.push(document.getElementById('imageContainer6'));
+            randomImage.push(document.getElementById('randomImage6'));
+            
+            imageContainer.push(document.getElementById('imageContainer7'));
+            randomImage.push(document.getElementById('randomImage7'));
+
+            imageContainer.push(document.getElementById('imageContainer8'));
+            randomImage.push(document.getElementById('randomImage8'));
+            
+            imageContainer.push(document.getElementById('imageContainer9'));
+            randomImage.push(document.getElementById('randomImage9'));
+
+
+            // Generate a random number to select an image
+            let i = 0;
+            var randomNumber = getRandomInt(1, 5); // Adjust the range as needed
+            if(randomNumber == 1){
+                while(i<9) {
+                    randomImage[i].src = './img/gruzy/auto1/image' + (i+1) + '.jpg';
+                    randomImage[i].alt = 'Random Image ' + (i+1);
+                    i++;
+                }
+            }
+            else if(randomNumber == 2){
+                while(i<8) {
+                    randomImage[i].src = './img/gruzy/auto2/image' + (i+1) + '.jpg';
+                    randomImage[i].alt = 'Random Image ' + (i+1);
+                    i++;
+                }
+                
+            }
+            else if(randomNumber == 3){
+                while(i<5) {
+                    randomImage[i].src = './img/gruzy/auto3/image' + (i+1) + '.jpg';
+                    randomImage[i].alt = 'Random Image ' + (i+1);
+                    i++;
+                }
+            }
+            else if(randomNumber == 4){
+                while(i<7) {
+                    randomImage[i].src = './img/gruzy/auto4/image' + (i+1) + '.jpg';
+                    randomImage[i].alt = 'Random Image ' + (i+1);
+                    i++;
+                }
+            }
+            else if(randomNumber == 5){
+                while(i<5) {
+                    randomImage[i].src = './img/gruzy/auto5/image' + (i+1) + '.jpg';
+                    randomImage[i].alt = 'Random Image ' + (i+1);
+                    i++;
+                }
+            }
+
+            // Set a timeout to load another random image after 5 seconds (5000 milliseconds)
+            //setTimeout(loadRandomImage, 5000); Adjust the interval as needed
+        }
+
+        // Call the loadRandomImage function to start displaying random images
+        loadRandomImage();
+        </script>
+      <!-- 
       <div class="swiper-container">
         <div class="swiper-wrapper">
 
@@ -59,7 +247,7 @@
             </div>
 
         </div>
-        <!-- If you need pagination -->
+         If you need pagination
         <div class="swiper-pagination"></div>
         
     </div>
@@ -154,6 +342,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
     </div>
+    -->
     <div class="stopka">
       <hr>
       Project by: dynamo & roger | wersja 1.1
