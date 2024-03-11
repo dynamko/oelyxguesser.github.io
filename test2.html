@@ -3,75 +3,484 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Folder Images</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        #imageContainer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .image {
-            margin: 10px;
-            max-width: 300px;
-            max-height: 200px;
-        }
-    </style>
+    <title>Document</title>
 </head>
 <body>
-    <h1>Wyświetlanie zdjęć z losowego folderu</h1>
-    <div id="imageContainer"></div>
+    
 
-    <script>
-        function loadImagesFromFolder(folderPath) {
-            fetch(`images/${folderPath}`)
-            .then(response => response.json())
-            .then(images => displayImages(images))
-            .catch(error => console.error('Błąd pobierania danych:', error));
-        }
-        // Lista folderów z obrazami
-        const folders = ['auto1', 'auto2', 'auto3', 'auto4', 'auto5'];
 
-        // Wybierz losowy folder z listy
-        const randomFolder = folders[Math.floor(Math.random() * folders.length)];
 
-        // Funkcja pobierająca obrazy z wybranego folderu
-        function loadImagesFromFolder(folderPath) {
-            // Utwórz zapytanie HTTP
-            const xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    if (xhr.status === 200) {
-                        const images = JSON.parse(xhr.responseText);
-                        displayImages(images);
-                    } else {
-                        console.error('Wystąpił błąd podczas pobierania danych:', xhr.status, xhr.statusText);
-                    }
+<script>
+
+
+        let auto20cena = 4800;
+        let auto2cena = 3900;
+        let auto3cena = 9600;
+        let auto4cena = 5900;
+        let auto5cena = 4500;
+        let auto6cena = 1999;
+        let auto7cena = 8999;
+        let auto8cena = 4999;
+        let auto9cena = 5800;
+        let auto10cena = 5400;
+        let auto11cena = 9500;
+        let auto12cena = 2100;
+        let auto13cena = 7000;
+        let auto14cena = 9999;
+        let auto15cena = 10000;
+        let auto16cena = 2000;
+        let auto17cena = 3600;
+        let auto18cena = 2200;
+        let auto20cena = 8200;
+        let auto20cena = 2750;
+        let marginesbledu = 1000;
+
+    function klik() {
+        let strzal = document.getElementById("cena").value;
+        if(randomNumber == 1) {
+            if(strzal == auto20cena) {
+                document.getElementById('wiadomosc').innerHTML = "to żeś pan trafił w 10, zabieraj tego szrota";
+                loadRandomImage();
+            }
+            else if(strzal >= (auto20cena-marginesbledu) && strzal <= (auto20cena+marginesbledu)) {
+                if(strzal>auto20cena) {
+                    document.getElementById('wiadomosc').innerHTML = "zabieraj pan, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
                 }
-            };
-
-            // Wyślij zapytanie HTTP GET do serwera, aby pobrać obrazy z folderu
-            xhr.open('GET', `get-images.php?folder=${folderPath}`, true);
-            xhr.send();
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "troche mało, ale zabieraj pan, niech strace te " + (auto20cena-strzal) + "zł";
+                }
+            }
+            else {
+                if(strzal>auto20cena){
+                    document.getElementById('wiadomosc').innerHTML = "dałeś się wydymać dla handlarzyka, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "po co pan mój czas marnujesz jak pieniędzy nie masz? brakuje ci: " + (auto20cena-strzal) + "zł";
+                }
+            }
+        }
+        else if(randomNumber == 20) {
+            if(strzal == auto20cena) {
+                document.getElementById('wiadomosc').innerHTML = "to żeś pan trafił w 10, zabieraj tego szrota";
+                loadRandomImage();
+            }
+            else if(strzal >= (auto20cena-marginesbledu) && strzal <= (auto20cena+marginesbledu)) {
+                if(strzal>auto20cena) {
+                    document.getElementById('wiadomosc').innerHTML = "zabieraj pan, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "troche mało, ale zabieraj pan, niech strace te " + (auto20cena-strzal) + "zł";
+                }
+            }
+            else {
+                if(strzal>auto20cena){
+                    document.getElementById('wiadomosc').innerHTML = "dałeś się wydymać dla handlarzyka, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "po co pan mój czas marnujesz jak pieniędzy nie masz? brakuje ci: " + (auto20cena-strzal) + "zł";
+                }
+            }
+        }
+        else if(randomNumber == 3) {
+            if(strzal == auto20cena) {
+                document.getElementById('wiadomosc').innerHTML = "to żeś pan trafił w 10, zabieraj tego szrota";
+                loadRandomImage();
+            }
+            else if(strzal >= (auto20cena-marginesbledu) && strzal <= (auto20cena+marginesbledu)) {
+                if(strzal>auto20cena) {
+                    document.getElementById('wiadomosc').innerHTML = "zabieraj pan, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "troche mało, ale zabieraj pan, niech strace te " + (auto20cena-strzal) + "zł";
+                }
+            }
+            else {
+                if(strzal>auto20cena){
+                    document.getElementById('wiadomosc').innerHTML = "dałeś się wydymać dla handlarzyka, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "po co pan mój czas marnujesz jak pieniędzy nie masz? brakuje ci: " + (auto20cena-strzal) + "zł";
+                }
+            }
+        }
+        else if(randomNumber == 4) {
+            if(strzal == auto20cena) {
+                document.getElementById('wiadomosc').innerHTML = "to żeś pan trafił w 10, zabieraj tego szrota";
+                loadRandomImage();
+            }
+            else if(strzal >= (auto20cena-marginesbledu) && strzal <= (auto20cena+marginesbledu)) {
+                if(strzal>auto20cena) {
+                    document.getElementById('wiadomosc').innerHTML = "zabieraj pan, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "troche mało, ale zabieraj pan, niech strace te " + (auto20cena-strzal) + "zł";
+                }
+            }
+            else {
+                if(strzal>auto20cena){
+                    document.getElementById('wiadomosc').innerHTML = "dałeś się wydymać dla handlarzyka, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "po co pan mój czas marnujesz jak pieniędzy nie masz? brakuje ci: " + (auto20cena-strzal) + "zł";
+                }
+            }
+        }
+        else if(randomNumber == 1) {
+            if(strzal == auto20cena) {
+                document.getElementById('wiadomosc').innerHTML = "to żeś pan trafił w 10, zabieraj tego szrota";
+                loadRandomImage();
+            }
+            else if(strzal >= (auto20cena-marginesbledu) && strzal <= (auto20cena+marginesbledu)) {
+                if(strzal>auto20cena) {
+                    document.getElementById('wiadomosc').innerHTML = "zabieraj pan, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "troche mało, ale zabieraj pan, niech strace te " + (auto20cena-strzal) + "zł";
+                }
+            }
+            else {
+                if(strzal>auto20cena){
+                    document.getElementById('wiadomosc').innerHTML = "dałeś się wydymać dla handlarzyka, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "po co pan mój czas marnujesz jak pieniędzy nie masz? brakuje ci: " + (auto20cena-strzal) + "zł";
+                }
+            }
+        }
+        else if(randomNumber == 1) {
+            if(strzal == auto20cena) {
+                document.getElementById('wiadomosc').innerHTML = "to żeś pan trafił w 10, zabieraj tego szrota";
+                loadRandomImage();
+            }
+            else if(strzal >= (auto20cena-marginesbledu) && strzal <= (auto20cena+marginesbledu)) {
+                if(strzal>auto20cena) {
+                    document.getElementById('wiadomosc').innerHTML = "zabieraj pan, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "troche mało, ale zabieraj pan, niech strace te " + (auto20cena-strzal) + "zł";
+                }
+            }
+            else {
+                if(strzal>auto20cena){
+                    document.getElementById('wiadomosc').innerHTML = "dałeś się wydymać dla handlarzyka, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "po co pan mój czas marnujesz jak pieniędzy nie masz? brakuje ci: " + (auto20cena-strzal) + "zł";
+                }
+            }
+        }
+        else if(randomNumber == 1) {
+            if(strzal == auto20cena) {
+                document.getElementById('wiadomosc').innerHTML = "to żeś pan trafił w 10, zabieraj tego szrota";
+                loadRandomImage();
+            }
+            else if(strzal >= (auto20cena-marginesbledu) && strzal <= (auto20cena+marginesbledu)) {
+                if(strzal>auto20cena) {
+                    document.getElementById('wiadomosc').innerHTML = "zabieraj pan, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "troche mało, ale zabieraj pan, niech strace te " + (auto20cena-strzal) + "zł";
+                }
+            }
+            else {
+                if(strzal>auto20cena){
+                    document.getElementById('wiadomosc').innerHTML = "dałeś się wydymać dla handlarzyka, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "po co pan mój czas marnujesz jak pieniędzy nie masz? brakuje ci: " + (auto20cena-strzal) + "zł";
+                }
+            }
+        }
+        else if(randomNumber == 1) {
+            if(strzal == auto20cena) {
+                document.getElementById('wiadomosc').innerHTML = "to żeś pan trafił w 10, zabieraj tego szrota";
+                loadRandomImage();
+            }
+            else if(strzal >= (auto20cena-marginesbledu) && strzal <= (auto20cena+marginesbledu)) {
+                if(strzal>auto20cena) {
+                    document.getElementById('wiadomosc').innerHTML = "zabieraj pan, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "troche mało, ale zabieraj pan, niech strace te " + (auto20cena-strzal) + "zł";
+                }
+            }
+            else {
+                if(strzal>auto20cena){
+                    document.getElementById('wiadomosc').innerHTML = "dałeś się wydymać dla handlarzyka, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "po co pan mój czas marnujesz jak pieniędzy nie masz? brakuje ci: " + (auto20cena-strzal) + "zł";
+                }
+            }
+        }
+        else if(randomNumber == 1) {
+            if(strzal == auto20cena) {
+                document.getElementById('wiadomosc').innerHTML = "to żeś pan trafił w 10, zabieraj tego szrota";
+                loadRandomImage();
+            }
+            else if(strzal >= (auto20cena-marginesbledu) && strzal <= (auto20cena+marginesbledu)) {
+                if(strzal>auto20cena) {
+                    document.getElementById('wiadomosc').innerHTML = "zabieraj pan, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "troche mało, ale zabieraj pan, niech strace te " + (auto20cena-strzal) + "zł";
+                }
+            }
+            else {
+                if(strzal>auto20cena){
+                    document.getElementById('wiadomosc').innerHTML = "dałeś się wydymać dla handlarzyka, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "po co pan mój czas marnujesz jak pieniędzy nie masz? brakuje ci: " + (auto20cena-strzal) + "zł";
+                }
+            }
+        }
+        else if(randomNumber == 1) {
+            if(strzal == auto20cena) {
+                document.getElementById('wiadomosc').innerHTML = "to żeś pan trafił w 10, zabieraj tego szrota";
+                loadRandomImage();
+            }
+            else if(strzal >= (auto20cena-marginesbledu) && strzal <= (auto20cena+marginesbledu)) {
+                if(strzal>auto20cena) {
+                    document.getElementById('wiadomosc').innerHTML = "zabieraj pan, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "troche mało, ale zabieraj pan, niech strace te " + (auto20cena-strzal) + "zł";
+                }
+            }
+            else {
+                if(strzal>auto20cena){
+                    document.getElementById('wiadomosc').innerHTML = "dałeś się wydymać dla handlarzyka, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "po co pan mój czas marnujesz jak pieniędzy nie masz? brakuje ci: " + (auto20cena-strzal) + "zł";
+                }
+            }
+        }
+        else if(randomNumber == 1) {
+            if(strzal == auto20cena) {
+                document.getElementById('wiadomosc').innerHTML = "to żeś pan trafił w 10, zabieraj tego szrota";
+                loadRandomImage();
+            }
+            else if(strzal >= (auto20cena-marginesbledu) && strzal <= (auto20cena+marginesbledu)) {
+                if(strzal>auto20cena) {
+                    document.getElementById('wiadomosc').innerHTML = "zabieraj pan, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "troche mało, ale zabieraj pan, niech strace te " + (auto20cena-strzal) + "zł";
+                }
+            }
+            else {
+                if(strzal>auto20cena){
+                    document.getElementById('wiadomosc').innerHTML = "dałeś się wydymać dla handlarzyka, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "po co pan mój czas marnujesz jak pieniędzy nie masz? brakuje ci: " + (auto20cena-strzal) + "zł";
+                }
+            }
+        }
+        else if(randomNumber == 1) {
+            if(strzal == auto20cena) {
+                document.getElementById('wiadomosc').innerHTML = "to żeś pan trafił w 10, zabieraj tego szrota";
+                loadRandomImage();
+            }
+            else if(strzal >= (auto20cena-marginesbledu) && strzal <= (auto20cena+marginesbledu)) {
+                if(strzal>auto20cena) {
+                    document.getElementById('wiadomosc').innerHTML = "zabieraj pan, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "troche mało, ale zabieraj pan, niech strace te " + (auto20cena-strzal) + "zł";
+                }
+            }
+            else {
+                if(strzal>auto20cena){
+                    document.getElementById('wiadomosc').innerHTML = "dałeś się wydymać dla handlarzyka, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "po co pan mój czas marnujesz jak pieniędzy nie masz? brakuje ci: " + (auto20cena-strzal) + "zł";
+                }
+            }
+        }
+        else if(randomNumber == 1) {
+            if(strzal == auto20cena) {
+                document.getElementById('wiadomosc').innerHTML = "to żeś pan trafił w 10, zabieraj tego szrota";
+                loadRandomImage();
+            }
+            else if(strzal >= (auto20cena-marginesbledu) && strzal <= (auto20cena+marginesbledu)) {
+                if(strzal>auto20cena) {
+                    document.getElementById('wiadomosc').innerHTML = "zabieraj pan, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "troche mało, ale zabieraj pan, niech strace te " + (auto20cena-strzal) + "zł";
+                }
+            }
+            else {
+                if(strzal>auto20cena){
+                    document.getElementById('wiadomosc').innerHTML = "dałeś się wydymać dla handlarzyka, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "po co pan mój czas marnujesz jak pieniędzy nie masz? brakuje ci: " + (auto20cena-strzal) + "zł";
+                }
+            }
+        }
+        else if(randomNumber == 1) {
+            if(strzal == auto20cena) {
+                document.getElementById('wiadomosc').innerHTML = "to żeś pan trafił w 10, zabieraj tego szrota";
+                loadRandomImage();
+            }
+            else if(strzal >= (auto20cena-marginesbledu) && strzal <= (auto20cena+marginesbledu)) {
+                if(strzal>auto20cena) {
+                    document.getElementById('wiadomosc').innerHTML = "zabieraj pan, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "troche mało, ale zabieraj pan, niech strace te " + (auto20cena-strzal) + "zł";
+                }
+            }
+            else {
+                if(strzal>auto20cena){
+                    document.getElementById('wiadomosc').innerHTML = "dałeś się wydymać dla handlarzyka, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "po co pan mój czas marnujesz jak pieniędzy nie masz? brakuje ci: " + (auto20cena-strzal) + "zł";
+                }
+            }
+        }
+        else if(randomNumber == 1) {
+            if(strzal == auto20cena) {
+                document.getElementById('wiadomosc').innerHTML = "to żeś pan trafił w 10, zabieraj tego szrota";
+                loadRandomImage();
+            }
+            else if(strzal >= (auto20cena-marginesbledu) && strzal <= (auto20cena+marginesbledu)) {
+                if(strzal>auto20cena) {
+                    document.getElementById('wiadomosc').innerHTML = "zabieraj pan, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "troche mało, ale zabieraj pan, niech strace te " + (auto20cena-strzal) + "zł";
+                }
+            }
+            else {
+                if(strzal>auto20cena){
+                    document.getElementById('wiadomosc').innerHTML = "dałeś się wydymać dla handlarzyka, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "po co pan mój czas marnujesz jak pieniędzy nie masz? brakuje ci: " + (auto20cena-strzal) + "zł";
+                }
+            }
+        }
+        else if(randomNumber == 1) {
+            if(strzal == auto20cena) {
+                document.getElementById('wiadomosc').innerHTML = "to żeś pan trafił w 10, zabieraj tego szrota";
+                loadRandomImage();
+            }
+            else if(strzal >= (auto20cena-marginesbledu) && strzal <= (auto20cena+marginesbledu)) {
+                if(strzal>auto20cena) {
+                    document.getElementById('wiadomosc').innerHTML = "zabieraj pan, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "troche mało, ale zabieraj pan, niech strace te " + (auto20cena-strzal) + "zł";
+                }
+            }
+            else {
+                if(strzal>auto20cena){
+                    document.getElementById('wiadomosc').innerHTML = "dałeś się wydymać dla handlarzyka, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "po co pan mój czas marnujesz jak pieniędzy nie masz? brakuje ci: " + (auto20cena-strzal) + "zł";
+                }
+            }
+        }
+        else if(randomNumber == 1) {
+            if(strzal == auto20cena) {
+                document.getElementById('wiadomosc').innerHTML = "to żeś pan trafił w 10, zabieraj tego szrota";
+                loadRandomImage();
+            }
+            else if(strzal >= (auto20cena-marginesbledu) && strzal <= (auto20cena+marginesbledu)) {
+                if(strzal>auto20cena) {
+                    document.getElementById('wiadomosc').innerHTML = "zabieraj pan, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "troche mało, ale zabieraj pan, niech strace te " + (auto20cena-strzal) + "zł";
+                }
+            }
+            else {
+                if(strzal>auto20cena){
+                    document.getElementById('wiadomosc').innerHTML = "dałeś się wydymać dla handlarzyka, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "po co pan mój czas marnujesz jak pieniędzy nie masz? brakuje ci: " + (auto20cena-strzal) + "zł";
+                }
+            }
+        }
+        else if(randomNumber == 1) {
+            if(strzal == auto20cena) {
+                document.getElementById('wiadomosc').innerHTML = "to żeś pan trafił w 10, zabieraj tego szrota";
+                loadRandomImage();
+            }
+            else if(strzal >= (auto20cena-marginesbledu) && strzal <= (auto20cena+marginesbledu)) {
+                if(strzal>auto20cena) {
+                    document.getElementById('wiadomosc').innerHTML = "zabieraj pan, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "troche mało, ale zabieraj pan, niech strace te " + (auto20cena-strzal) + "zł";
+                }
+            }
+            else {
+                if(strzal>auto20cena){
+                    document.getElementById('wiadomosc').innerHTML = "dałeś się wydymać dla handlarzyka, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "po co pan mój czas marnujesz jak pieniędzy nie masz? brakuje ci: " + (auto20cena-strzal) + "zł";
+                }
+            }
+        }
+        else if(randomNumber == 1) {
+            if(strzal == auto20cena) {
+                document.getElementById('wiadomosc').innerHTML = "to żeś pan trafił w 10, zabieraj tego szrota";
+                loadRandomImage();
+            }
+            else if(strzal >= (auto20cena-marginesbledu) && strzal <= (auto20cena+marginesbledu)) {
+                if(strzal>auto20cena) {
+                    document.getElementById('wiadomosc').innerHTML = "zabieraj pan, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "troche mało, ale zabieraj pan, niech strace te " + (auto20cena-strzal) + "zł";
+                }
+            }
+            else {
+                if(strzal>auto20cena){
+                    document.getElementById('wiadomosc').innerHTML = "dałeś się wydymać dla handlarzyka, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "po co pan mój czas marnujesz jak pieniędzy nie masz? brakuje ci: " + (auto20cena-strzal) + "zł";
+                }
+            }
+        }
+        else if(randomNumber == 1) {
+            if(strzal == auto20cena) {
+                document.getElementById('wiadomosc').innerHTML = "to żeś pan trafił w 10, zabieraj tego szrota";
+                loadRandomImage();
+            }
+            else if(strzal >= (auto20cena-marginesbledu) && strzal <= (auto20cena+marginesbledu)) {
+                if(strzal>auto20cena) {
+                    document.getElementById('wiadomosc').innerHTML = "zabieraj pan, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "troche mało, ale zabieraj pan, niech strace te " + (auto20cena-strzal) + "zł";
+                }
+            }
+            else {
+                if(strzal>auto20cena){
+                    document.getElementById('wiadomosc').innerHTML = "dałeś się wydymać dla handlarzyka, przestrzeliłeś o " + (strzal-auto20cena) + "zł";
+                }
+                else {
+                    document.getElementById('wiadomosc').innerHTML = "po co pan mój czas marnujesz jak pieniędzy nie masz? brakuje ci: " + (auto20cena-strzal) + "zł";
+                }
+            }
         }
 
-        // Funkcja wyświetlająca obrazy w kontenerze
-        function displayImages(images) {
-            const imageContainer = document.getElementById('imageContainer');
-            images.forEach(image => {
-                const imgElement = document.createElement('img');
-                imgElement.src = image;
-                imgElement.alt = 'Image';
-                imgElement.classList.add('image');
-                imageContainer.appendChild(imgElement);
-            });
-        }
+    }
 
-        // Wywołaj funkcję pobierającą obrazy z losowego folderu
-        loadImagesFromFolder(randomFolder);
-    </script>
+</script>
+
 </body>
 </html>
