@@ -5,24 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, 
                  initial-scale=1.0">
-    <title>Read File in Browser</title>
+    <style>
+        .divek {
+            width: 1000px;
+            height: 700px;
+            background-color: black;
+        }
+        .obrazeczek {
+            
+            vertical-align: middle;
+        }
+    .helper {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+    </style>
 </head>
  
 <body>
-    <script>
-        const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
-
-        const repeatedGreetings = async () => {
-        await sleep(1000)
-        console.log("First")
-        await sleep(1000)
-        console.log("Second")
-        await sleep(1000)
-        console.log("Third")
-        }
-
-        repeatedGreetings()
-    </script>
+    <div class="divek">
+        <span class="helper"></span>
+        <img src="./img/temp.png" class="obrazeczek">
+    </div>
 </body>
  
 </html>

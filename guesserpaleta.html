@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oelyx guesser</title>
+    <link rel="icon" type="image/x-icon" href="./img/ikona_128.ico">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background-color: RGB(242, 244, 245);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <a href="./index.html"><img src="img/oelyx.png"><img src="img/guesser.png" width="300px"></a>
+        <a href="./guesser.html"><button class="przycisk">Przeglądaj gruzy</button></a>
+        <a href="./kontakt.html"><button class="przycisk">Info</button></a>
+        <a href="./filmiki.html"><button class="przycisk">Kinematografia upalania</button></a>
+    </div>
+
+    <div id="wybor" class="wybor">
+        <h1>wybierz tryb:</h1>
+        <button class="przycisk2" onclick="show_normal()">normalny</button><br>
+    </div>
+
+    <div class="main" id="normalny" style="display:none">
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <div class="numbertext" id="imageContainer">1 / 9</div>
+                <img src="https://raw.githubusercontent.com/dynamko/oelyxguesser.github.io/main/img/temp.png" id="randomImage">
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext" id="imageContainer2">2 / 9</div>
+                <img src="https://raw.githubusercontent.com/dynamko/oelyxguesser.github.io/main/img/temp.png" id="randomImage2">
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext" id="imageContainer3">3 / 9</div>
+                <img src="https://raw.githubusercontent.com/dynamko/oelyxguesser.github.io/main/img/temp.png" id="randomImage3">
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext" id="imageContainer4">4 / 9</div>
+                <img src="https://raw.githubusercontent.com/dynamko/oelyxguesser.github.io/main/img/temp.png" id="randomImage4">
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext" id="imageContainer5">5 / 9</div>
+                <img src="https://raw.githubusercontent.com/dynamko/oelyxguesser.github.io/main/img/temp.png" id="randomImage5">
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext" id="imageContainer6">6 / 9</div>
+                <img src="https://raw.githubusercontent.com/dynamko/oelyxguesser.github.io/main/img/temp.png" id="randomImage6">
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext" id="imageContainer7">7 / 9</div>
+                <img src="https://raw.githubusercontent.com/dynamko/oelyxguesser.github.io/main/img/temp.png" id="randomImage7">
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext" id="imageContainer8">8 / 9</div>
+                <img src="https://raw.githubusercontent.com/dynamko/oelyxguesser.github.io/main/img/temp.png" id="randomImage8">
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext" id="imageContainer9">9 / 9</div>
+                <img src="https://raw.githubusercontent.com/dynamko/oelyxguesser.github.io/main/img/temp.png" id="randomImage9">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
+            <div style="text-align:center" class="kropki">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+                <span class="dot" onclick="currentSlide(8)"></span>
+                <span class="dot" onclick="currentSlide(9)"></span>
+            </div>
+
+        </div>
+        <br>
+
+
+
+        <div class="zgadywanka">
+            <h1 id="tytul">Golf IV 1.9 TDI</h1><br>
+            <h5 id="wiadomosc">ile pan dasz i dlaczego tak mało?</h5>
+            <input type="number" class="cena" id="cena">
+            <button class="przycisk2" onclick="klik()">Kup teraz</button>
+        </div>
+
+
+        <div class="potrzebne">
+        </div>
+
+        <img src="./img/temp.png" id="specs">
+
+        <div class="opis">
+            <p id="opistekst">Witam mam do sprzedania golfa w gnoju</p>
+        </div>
+
+        <script>
+
+            /*
+            function reset() {
+                for(let y = 0; y < 9; y++){
+                    randomImage[y].src = 'https://raw.githubusercontent.com/dynamko/oelyxguesser.github.io/main/img/temp.png';
+                }
+            }
+            */
+
+            function show_normal() {
+                let normal = document.getElementById("normalny");
+                if (normal.style.display == "none") {
+                    normal.style.display = "block";
+                } else {
+                    normal.style.display = "none";
+                }
+            }
+
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+            // Function to get a random integer between min and max (inclusive)
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            let randomNumber;
+
+            // Function to load a random image
+            function loadRandomImage() {
+                var imageContainer = [];
+                var randomImage = [];
+
+                imageContainer.push(document.getElementById('imageContainer'));
+                randomImage.push(document.getElementById('randomImage'));
+
+                imageContainer.push(document.getElementById('imageContainer2'));
+                randomImage.push(document.getElementById('randomImage2'));
+
+                imageContainer.push(document.getElementById('imageContainer3'));
+                randomImage.push(document.getElementById('randomImage3'));
+
+                imageContainer.push(document.getElementById('imageContainer4'));
+                randomImage.push(document.getElementById('randomImage4'));
+
+                imageContainer.push(document.getElementById('imageContainer5'));
+                randomImage.push(document.getElementById('randomImage5'));
+
+                imageContainer.push(document.getElementById('imageContainer6'));
+                randomImage.push(document.getElementById('randomImage6'));
+
+                imageContainer.push(document.getElementById('imageContainer7'));
+                randomImage.push(document.getElementById('randomImage7'));
+
+                imageContainer.push(document.getElementById('imageContainer8'));
+                randomImage.push(document.getElementById('randomImage8'));
+
+                imageContainer.push(document.getElementById('imageContainer9'));
+                randomImage.push(document.getElementById('randomImage9'));
+
+                let tytul = document.getElementById('tytul');
+                let specs = document.getElementById('specs');
+                let opis = document.getElementById('opistekst');
+
+                const opisy = [
+                    `Ford Fusion 1.4 disel
+                    Rok 2005
+                    Przegląd do czerwca 2024r
+                    Oc do maja 2024r
+                    Przebieg 297000
+                    Kolor czarny
+                    Stan dobry
+                    Po więcej informacji proszę dzwonić pod podany numer telefonu jest to samochód mojego taty.`,
+                    `
+                    MERCEDES-BENZ A160
+                    2000 R
+                    230 000 KM
+                    1.6 BENZYNA
+                    102 KM
+
+                    Do zaoferowania idealne auto na dojazdy MERCEDES-BENZ A160 z benzynowym silnikiem 1.6 o mocy 102 KM. Auto z 2000 roku, obecnie z przebiegiem 230 tyś km. Auto w dobrym stanie technicznym jak i wizualnym. Posiada aktualne opłaty.
+
+                    ELEKTRYCZNE SZYBY
+                    KLIMATYZACJA
+                    CENTRALNY ZAMEK
+                    RADIO CD
+
+                    Na auto wystawiana jest FAKTURA VAT- MARŻA przy czym oszczędzają Państwo 2% podatku odprowadzanego do US.`,
+                    `
+                    Toyota Yaris 1.3, samochód sprowadzony z Francji w 2015 r. Kolor grafitowy. Nosi ślady użytkowania.
+                    Klimatyzacja manualna. Radio z odtwarzaczem CD.
+                    Przegląd techniczny ważny do 04.03.2025 r.`,
+                    `
+                    Na sprzedaż Jaguar 3.0. Samochód normalnie w użytkowaniu. Pali się kontrolka DTC, jest to powiązane z ABS, nie wpływa to na komfort jazdy.
+                    Jaguar ma swoją moc, czuć to V6, dołożyłem nowy ładny grill za 500zl. Samochód ma lekka obcierkę na drzwiach kierowcy, praktycznie niewidoczna.
+                    Na akumulator w samochodzie jest założony hebel odcinający zasilanie, poprzedni właściciel oszukał mnie, że to taki „bajer”, a podejrzewam że coś pobiera prąd. Wyłączając prąd z kluczyka samochód odpala normalnie.
+                    Przegląd ważny do października, a ubezpieczenie do lipca.`,
+                    `
+                    Witamy w ogłoszeniu auto-komisu Flamingo!
+
+                    We speak English! Розмовляємо українською!
+
+                    Dziś na sprzedaż oferujemy Państwu Volkswagena Golfa IV z jednostką diesla o pojemności 1896 cm³ generującą moc 110km.
+                    Model ten charakteryzuje się legendarną już jednostką TDi grupy VAG, niskim spalaniem pokroju 6l/100km ON, malym gabarytem idealnym do miasta , niskimi kosztami eksploatacji oraz dynamicznym silnikiem.
+
+                    Na wyposażeniu autka znajdziemy:
+                    -Centralny zamek z pilota
+                    -Regulacja kierownicy 2 płaszczyzny
+                    -Climatronic
+                    -Elektryczne lusterka
+                    -Elektryczne szyby przód, tył
+                    -Airbag kierowcy, pasażera oraz kurtyny
+                    -Wspomaganie kierownicy
+                    -Grzanie tylnej szyby
+                    -Podłokietnik tył przód
+
+                    Samochod posiada wazna polise OC do 09.10.2024 oraz PT aż do 14.11.24
+
+                    Z chęcią przyjmiemy Wasze auto w rozliczeniu!`,
+                    `
+                    Sprzedam VW polo
+                    Benzyna+lpg`
+                    ,
+                    `
+                    Do sprzedania elegancki Peugeot 406 Coupe 3.0 V6 z dodatkowym wyposażeniem
+
+                    Podstawowe informacje:
+
+                    Marka: Peugeot
+                    Model: 406 Coupe
+                    Silnik: 3.0 V6
+                    Moc: 190 KM
+                    Przebieg: 205 444 km
+                    Dodatkowe wyposażenie:
+
+                    Hamulce Brembo: Samochód wyposażony w hamulce Brembo, gwarantujące doskonałą skuteczność hamowania i bezpieczeństwo na drodze.
+                    Wyposażenie wnętrza: Wnętrze Peugeota zostało wzbogacone o dodatkowe części, podnoszące komfort jazdy i estetykę.
+                    Fotele sportowe: Wygodne fotele o sportowym charakterze zapewniają wyjątkowy komfort i wsparcie podczas jazdy.
+                    Felgi Pininfarina: Samochód wyposażony w ekskluzywne felgi Pininfarina, nadające mu niepowtarzalny wygląd.
+
+                    Auto jest w doskonałym stanie technicznym, gotowe do jazdy, ale posiada również potencjał do lekkiego dopieszczenia, aby spełnić wszystkie Twoje oczekiwania.
+
+                    Dodatkowe informacje o sprzedaży:
+
+                    OC ważne do: 24.04.2024 r
+                    Badanie Techniczne ważne do: 08.03.2024 r
+                    Do kupienia jest maska i przedni zderzak do tego tylny siłownik od bagażnika oraz linka do odsuwania fotela pasażera`,
+                    `Witam mam do sprzedania Mercedesa w124. Kombi. Samochód 16 lat w jednych rękach .
+                    Wizualnie nie powala . Zachodzi klar z całego. Auta. Z rzeczy ważnych kielichy i podłoga w stanie. Bdb. Oryginał mechanicznie stan bdb.
+                    Chodzi jak zegarek , zawieszenie nie wybite. Środek nie zniszczony. Pokrowce z dawnej epoki. Samochód posiada .
+                    Poduszki powietrzne , ABS. El. Szyby. Wspomaganie kierownicy . Klimatyzacja. Ważne opłaty. Ogólnie samochód do jazdy po za schodzącym klarem`,
+                    `
+                    Do sprzedania Ford ESCORT 1.6 CABRIOLET wersja: Michael Schumacher - 16V Benzyna + LPG z 1993 roku.
+                    MIEWIELE ICH ZOSTAŁO!!
+                    Auto kupione ok rok temu, przez zimę praktycznie nie używane, lecz do późnej jesieni używany jako kabriolet przy każdej okazji pogodowej. W mojej ocenie wymaga jeszcze sporo czasu i finansów, ale już teraz sprawia sporo frajdy z jazdy i jak na Forda w tym roczniku to jest w całkiem dobrym stanie - o mankamentach chętnie opowiem telefonicznie.
+                    Przegląd do lipca 2024 - OC do czerwca 2024
+                    Sądzę że można traktować je jako bazę do odbudowy (na zabytek), ale też jako auto do do jazdy.`,
+                    `
+                    Witam. Mam do sprzedania Seata Leona z silnikiem 1.6 8v benzyna + gaz.
+                    Gaz ważny do 2027r.
+                    PT 24.10.2024,
+                    OC 14.07.2024.
+                    Klimatyzacja sprawna,
+                    ABS,
+                    elektryczne szyby,
+                    centralny zamek,
+                    alufelgi 16,
+                    poduszki powietrzne,
+                    radio bluetooth,
+                    wspomaganie kierownicy,
+                    do poprawek blacharskich (problem z bezbarwnym lakierem),
+                    opony zima-lato na felgach.`,
+                    `
+                    Witam samochód do poprawek lakierniczych ,poszycie dachu do regeneracji.
+                    Stan silnika bardzo dobry po wymianie wszytskich filtrów oleju , także hamulców i opon . Auto sprowadzone z Niemiec`,
+                    `
+                    Witam mam do zaoferowania Skodę Felicję 1.3 mpi . Jest to samochód tanie w użytkowaniu jestem drugim właścicielem po zakupie samochód był serwisowany do zeszłego roku wszystkie pokwitowania są w książce serwisowej
+                    Zostało wymienione:
+
+                    -tarcze przód, tył
+                    -felgi oryginalne szkiełkowane I malowane proszkowo na oryginalny kolor , gdzie widać na zdjęciach
+                    -opony nowe zeszłym roku Dębica
+                    - komplet kół letnich (felgi i opony )
+                    -wymieniony olej i filtry
+                    Więcej info udzielę telefonicznie
+                    Cena :2100 Do negocjacji`,
+                    `Do sprzedania Audi 80 z 1979 roku . Super baza do odrestaurowania, auto kompletne, na obecną chwile środek jest zdemontowany i przygotowane auto jest do prac blacharskich. Auto odpala i jeździ, silnik pracuje bardzo ładnie. środek nie zniszczony. Auto do obejrzenia w Ligocie Pięknej pod Wrocławiem.`,
+
+                    `Witam na sprzedaz mam Audi a4b5 w ostatnich latach bylo dosyc duzo zrobione:
+                    5 lat temu wymieniane wielowahacze
+                    4 lata temu wymieniana pompa wspomagania, odmy,
+                    3 lata temu sprezarka klimatyzacji
+                    2 lata temu rozrzad, wszystkie tarcze i klocki
+                    W tym roku wymieniane sprzeglo dwumasowe, olej i filtr oleju, akumulator
+                    Samochod jak na te lata jest w bardzo dobrym stanie wizualnym jak i mechanicznym.
+                    Wyposazenie:
+                    Wszystkie el. Szyby, podgrzewane przednie fotele, klimatyzacja, szyberdach, el.lusterka`,
+                    `Witam posiadam do sprzedania Fiat 126, auto posiada aktualne opłaty. Samochód garażowany, odpalany i przejechane parę km co jakiś czas.`,
+                    `Sprzedam samochód Ford Focus MK I rok 1999 benzyna 1.8. Przebieg 276,467 tyś
+                    Auto doinwestowane- wymieniono/naprawiono: tarcze hamulcowe przód i tył, przednie zawieszenie zrobione z wymianą sanek/ belki przedniej, sprężyn , przegubów z wyjątkiem amortyzatorów które są w dobrym stanie, W tylnim zawieszeniu wymienione sprężyny oraz łożyska w kołach. Zregenerowany alternator, maglownica. Przy 209 tyś zmieniony rozrząd wraz z pompą. Wymienione sprzęgło. Silnik szczelny nie cieknie. Rura wydechowa czysta jak nowa. Wymieniałem olej co 10 tyś lub co roku. Następna wymiana 04.2024. Auto ma ważny przegląd do 02.08.2024`,
+                    `Do sprzedania.
+                    Škoda Felicja 1.3 Mpi. 68KM.
+                    Pierwsza rejestracja 2000r.
+                    Przebieg 217767km.
+                    OC do 29.01.2025.
+                    Przegląd do 18.08.2024`,
+                    
+                    `Witam mam do sprzedania auto marki Peugeot 306 z silnikiem o pojemności 1.4l. Silnik bezawaryjny, brak wycieków. Auto 15 lat w jednych rękach. Auto bez rdzy jak to przystało na francuza. Szyba pasażera niesprawna. Auto ekonomiczne, tanie w utrzymaniu.`,
+                    `VW golf 3 syncro
+                    Naped 4x4
+                    Skrzynia manualna
+                    Pojemność 2.0 benz
+                    Moc 115 KM
+                    Rok 1997
+                    Wersja 5 drzwiowa
+
+                    Wyposażenie
+
+                    Klimatyzacja sprawna
+                    Elektryczne szyby
+                    Elektryczny szyberdach
+                    Wspomaganie
+                    Centralny zamek z pilota
+                    Światła dzienne Led
+                    Opony nokian stan b.dobry
+                    Alufelgi 15
+                    Założony xsenon
+
+                    Auto sprawne w ciągłej eksploatacji. Posiada mankamenty blacharsko lakiernicze.
+                    Progi, podłoga całe, można podkladac lewarek.
+                    Mechanicznie bez zastrzeżeń.`,
+                    `Na sprzedaż Seat Ibiza, sprawny i jak na swoje lata działa bez zarzutów.
+                    W 2015 roku wymieniona pompa, łożyska, pas do alternatora i wspomaganie kierownicy
+                    w 2018 filtr powietrza, świece, sprzęgło+kabel, hamulce (przód i tył)
+                    w 2024 filtr do benzyny, pasek rozrządu oraz olej.
+
+                    Do naprawy jest szyba od strony kierowcy (nie opuszcza się) oraz ogrzewanie (coś się zapchało).
+                    Opony wielosezonowe, przednie wymienione na początku 2023 roku.
+
+                    Nowy akumulator wymieniony w 2021 roku.`
+
+                ];
+
+
+                let tytulY=[
+                'Ford Fusion 1.4 disel Rok 2005',//4800
+                'Mercedes-Benz A160 1.6 B 102KM 2000 R KLIMA',//3900
+                'Sprzedam Toyotę Yaris 1.3',//9600
+                'Jaguar Type S-Type 3.0 okazja',//5900
+                'Volkswagen Golv IV 2000 1.9 TDI 5D 110km -RATY-',//4500
+                'Volkswagen polo 1.0',//1999
+                'Peugeot 406 coupe 3.0 V6 (Do napraw wizualnych)',//8999
+                'Mercedes W124 kombi 2.5D Klima',//4999
+                'Ford Escort 1.6 + LPG 16V kabriolet z 1993 - Michael Schumacher',//5800
+                'Seat Leon 1.6 + gaz',//5400
+                'Mercedes CLK cabrio 230 Kompressor',//9500
+                'Sprzedam skodę felicje',//2100
+                'Audi 80 do renowacji 1979 rok możliwa zamiana',//7000
+                'Sprzedam Audi a4b5 2.4v6',//9999
+                'Fiat 126p 1997r dobry stan',//10 000
+                'Ford Focus MK1 rok 1999',//2000
+                'Skoda Felicia 1.3 Mpi',//3600
+                'Peugeot 306 1.4 75KM Benzyna Bez rdzy',//2200
+                'VW golf 3 syncro 4x4 2.0 benz 115KM 5 drzwi klima',//8200
+                'Seat Ibiza 96 rocznik',//2750
+
+                ];
+
+                let photoCount=[9,8,5,7,5,8,8,8,8,5,8,7,8,8,7,6,5,7,8,8];
+
+
+                // Generate a random number to select an image
+                let i = 0;
+                randomNumber = getRandomInt(1, 20); // Adjust the range as needed
+                const extentionJPG = ".jpg?raw=true";
+                const extentionPNG = ".PNG?raw=true";
+
+                while (i < photoCount[(randomNumber-1)]) {//
+                    randomImage[i].src = 'https://raw.githubusercontent.com/dynamko/oelyxguesser.github.io/main/img/gruzy/auto' + randomNumber + '/image' + (i + 1) + extentionJPG;
+                    //randomImage[i].src = './img/gruzy/auto' + randomNumber + '/image' + (i + 1) + extentionJPG;
+                    randomImage[i].alt = 'Random Image ' + (i + 1);
+                    tytul.innerHTML = tytulY[randomNumber-1];//4800
+                    specs.src = 'https://raw.githubusercontent.com/dynamko/oelyxguesser.github.io/main/img/gruzy/auto' + randomNumber + '/Przechwytywanie2' + extentionPNG;
+                    opis.innerHTML = opisy[randomNumber - 1];
+                    i++;
+                }
+
+                //reset shitu
+                for(let y = photoCount[(randomNumber-1)]; y < 9; y++){
+                    randomImage[y].src = 'https://raw.githubusercontent.com/dynamko/oelyxguesser.github.io/main/img/temp.png';
+                }
+
+                // Set a timeout to load another random image after 5 seconds (5000 milliseconds)
+                //setTimeout(loadRandomImage, 5000); Adjust the interval as needed
+            }
+
+            // Call the loadRandomImage function to start displaying random images
+            loadRandomImage();
+            let ceny=[4800,3900,9600,5900,4500,1999,8999,4999,5800,5400,9500,2100,7000,9999,10000,2000,3600,2200,8200,2750];
+            let marginesbledu = 1000;
+
+            function klik() {
+                let strzal = document.getElementById("cena").value;
+
+                    if (strzal == ceny[randomNumber-1]) {
+                        document.getElementById('wiadomosc').innerHTML = "to żeś pan trafił w 10, zabieraj tego szrota";
+                        loadRandomImage();
+                    }
+                    else if (strzal >= (ceny[randomNumber-1] - marginesbledu) && strzal <= (ceny[randomNumber-1] + marginesbledu)) {
+                        if (strzal > ceny[randomNumber-1]) {
+                            document.getElementById('wiadomosc').innerHTML = "zabieraj pan, przestrzeliłeś o " + (strzal - ceny[randomNumber-1]) + "zł";
+                        }
+                        else {
+                            document.getElementById('wiadomosc').innerHTML = "troche mało, ale zabieraj pan, niech strace te " + (ceny[randomNumber-1] - strzal) + "zł";
+                        }
+                    }
+                    else {
+                        if (strzal > ceny[randomNumber-1]) {
+                            document.getElementById('wiadomosc').innerHTML = "dałeś się wydymać dla handlarzyka, przestrzeliłeś o " + (strzal - ceny[randomNumber-1]) + "zł";
+                        }
+                        else {
+                            document.getElementById('wiadomosc').innerHTML = "po co pan mój czas marnujesz jak pieniędzy nie masz? brakuje ci: " + (ceny[randomNumber-1] - strzal) + "zł";
+                        }
+                    }
+            }
+            
+        </script>
+        <div class="stopka">
+            <hr>
+            Project by: dynamo & roger | wersja 1.2
+        </div>
+
+</body>
+
+</html>

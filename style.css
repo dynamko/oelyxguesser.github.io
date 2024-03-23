@@ -4,9 +4,24 @@
     font-family: "geomanist";
 }
 #randomImage, #randomImage2, #randomImage3, #randomImage4, #randomImage5, #randomImage6, #randomImage7, #randomImage8, #randomImage9 {
-  height: 700px;
+  max-height: 700px;
   max-width: 1000px;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+.kropki {
+  position: absolute;
+  top: 100%;
+  left: 400px;
+}
+.wybor {
+  text-align: center;
+}
+
 .menu2 {
     display: block;
     margin-right: auto;
@@ -78,11 +93,6 @@
     align-items: left;
 }
 
-/* Slide image */
-.swiper-slide img {
-    max-width: 100%;
-    max-height: 100%;
-}
 
 /* Slide caption */
 .slide-caption {
@@ -108,8 +118,9 @@
 /*tutaj*/
 
 * {box-sizing: border-box}
-.mySlides {display: none}
-img {vertical-align: middle;}
+.mySlides {
+  display: none;
+}
 
 /* Slideshow container */
 .slideshow-container {
@@ -118,7 +129,7 @@ img {vertical-align: middle;}
   height: 700px;
   position: relative;
   margin-left: 20px;
-  float:left;
+  float: left;
 }
 
 /* Next & previous buttons */
@@ -237,4 +248,29 @@ img {vertical-align: middle;}
 
 .potrzebne {
   clear:both;
+}
+
+.muza {
+  position: fixed;
+  left:77%;
+  top:25.8%;
+  width: 21.5%;
+  height: 3.2%;
+  object-fit: fill;
+}
+.kasetacontainer {
+margin-left: 90%;
+top:7%;
+position:absolute;
+}
+.kaseta{
+  float:right;
+  margin-left:70%;
+  width: auto;
+  height: auto;
+  max-width: 250%;
+  max-height: 250%;
+  min-width: 250%;
+  min-width: 250%;
+  object-fit: fill;
 }
